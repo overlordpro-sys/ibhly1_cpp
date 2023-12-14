@@ -15,7 +15,7 @@ int main() {
     int x, y;
     while (in >> x >> y)
         grid[x][y] = black;
-    deleteCell(grid, 4, 3);
+    deleteCell(grid, 3, 4);
     printMtrx(grid);
     return 0;
 }
