@@ -23,9 +23,9 @@ class date {
    date operator--();
    date operator--(int);
    int operator-(date const &rhs);
+   int myMonth, myDay, myYear;
 
  private:
-   int myMonth, myDay, myYear;
    int daysInMonth(int month, int year); // suggested private member function
 };
 inline date::date() : myMonth(1), myDay(1), myYear(2023) {}
@@ -154,6 +154,46 @@ inline date date::operator--(int) {
    return temp;
 }
 
-inline int date::operator-(date const &rhs) {}
+inline bool operator==(const date &lhs, const date &rhs) {
+   return lhs.myYear == rhs.myYear && lhs.myMonth == rhs.myMonth &&
+          lhs.myDay == rhs.myDay;
+}
+
+inline bool operator!=(const date &lhs, const date &rhs) {
+   return !(lhs.myYear == rhs.myYear && lhs.myMonth == rhs.myMonth &&
+            lhs.myDay == rhs.myDay);
+}
+
+inline bool operator<(const date &lhs, const date &rhs) {
+   if (lhs.myYear < rhs.myYear)
+      return true;
+   if (lhs.myYear > rhs.myYear)
+      return false;
+   if (lhs.myMonth < rhs.myMonth)
+      return true;
+   if (lhs.myMonth > rhs.myMonth)
+      return false;
+   if (lhs.myDay < rhs.myDay)
+      return true;
+   if (lhs.myDay > rhs.myDay)
+      return false;
+   return false;
+}
+
+inline bool operator>(const date &lhs, const date &rhs) {
+   if (lhs.myYear > rhs.myYear)
+      return true;
+   if (lhs.myYear < rhs.myYear)
+      return false;
+   if (lhs.myMonth > rhs.myMonth)
+      return true;
+   if (lhs.myMonth < rhs.myMonth)
+      return false;
+   if (lhs.myDay > rhs.myDay)
+      return true;
+   if (lhs.myDay < rhs.myDay)
+      return false;
+   return false;
+}
 
 #endif // DATE_H
