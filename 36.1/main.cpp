@@ -57,6 +57,12 @@ int main() {
            << "6. Exit\n"
            << "Enter choice: ";
       cin >> choice;
+      if (cin.fail()) {
+         cin.clear();
+         cin.ignore(1000, '\n');
+         cout << "Invalid choice\n";
+         continue;
+      }
       switch (choice) {
       case 1:
          loadTree(filename, tree);
