@@ -33,7 +33,6 @@ void printPreorderHelper(treePtr tree);
 void printPostorder(binaryTree tree);
 void printPostorderHelper(treePtr tree);
 void printInorderNonrecursive(binaryTree tree);
-void printLevel(binaryTree tree);
 void insertNode(binaryTree &, int, int);
 void insertNodeHelper(treePtr &, int, int);
 bool deleteNode(binaryTree &, int);
@@ -169,10 +168,6 @@ void printInorderNonrecursive(binaryTree tree) {
          temp = temp->right;
       }
    } while (!stack.empty() || temp != nullptr);
-}
-
-void printLevel(binaryTree tree) {
-   quqeasda
 }
 
 void testDelete(binaryTree &tree) {

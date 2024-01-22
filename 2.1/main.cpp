@@ -11,7 +11,9 @@ int main() {
    bool boolean = false;
 
    std::cout << "\n"
-             << integer << "\n"
+             << "The value of integer = " << integer
+             << "\t The byte size of integer is " << sizeof(integer)
+             << " bytes.\n"
              << longer << "\n"
              << unsignInt << "\n"
              << unsignedLonger << "\n"
