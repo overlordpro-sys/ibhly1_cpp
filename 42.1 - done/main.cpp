@@ -172,6 +172,9 @@ void printPostorderHelper(treePtr root) {
 
 void printLevel(binaryTree tree) {
    queue<treePtr> queue;
+   if (tree.root == nullptr) {
+      return;
+   }
    queue.push(tree.root);
    do {
       treePtr temp = queue.front();

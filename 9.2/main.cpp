@@ -2,6 +2,7 @@
 #include <cmath>
 #include <iostream>
 #include <list>
+#include <string>
 
 void magicSquares();
 void reverseInt();

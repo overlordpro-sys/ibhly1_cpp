@@ -30,7 +30,8 @@ void promptCalc(stack<double> &stack, queue<string> &expression) {
    set<string> operations = {"+", "-", "*", "/"};
    string input;
    while (input.compare("q") != 0) {
-      cout << "Input an operator (+, -, *, /) or a number: ";
+      cout << "Input an operator (+, -, *, /) or a number ('q' to finish and "
+              "calculate): ";
       cin >> input;
       if (input.compare("q") == 0)
          continue;

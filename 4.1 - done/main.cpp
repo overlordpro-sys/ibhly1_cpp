@@ -5,9 +5,9 @@ using namespace std;
 int main() {
    double hours, rate, grosspay, fTax, fica, sTax, netpay;
    const double fTaxRate = .15, ficaRate = .08, sTaxRate = .032;
-   cout << "Hours worked?";
+   cout << "Hours worked? ";
    cin >> hours;
-   cout << "Hourly rate?";
+   cout << "Hourly rate? ";
    cin >> rate;
    grosspay = hours * rate;
    fTax = grosspay * fTaxRate;

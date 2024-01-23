@@ -3,12 +3,8 @@
 #include <iostream>
 
 int main() {
-   std::ifstream in(
-       "C:\\Users\\256676\\Documents\\C++ ICT\\ibhly1-cpp\\14.1\\squeeze.txt",
-       std::ios::in);
-   std::ofstream out("C:\\Users\\256676\\Documents\\C++ "
-                     "ICT\\ibhly1-cpp\\14.1\\squeezeout.txt",
-                     std::ios::out);
+   std::ifstream in("squeeze.txt", std::ios::in);
+   std::ofstream out("squeezeout.txt", std::ios::out);
 
    char temp;
    std::string rest = "";

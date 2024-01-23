@@ -8,7 +8,7 @@ int main() {
    cin >> make;
    cout << "\nCar Model: ";
    cin >> model;
-   cout << "\nInput a license plate";
+   cout << "\nInput a license plate: ";
    cin >> input;
    firstHalf = input.substr(0, 3);
    secondHalf = input.substr(3, 3);

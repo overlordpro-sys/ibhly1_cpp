@@ -1,7 +1,3 @@
-//
-// Created by 256676 on 4/25/2023.
-//
-
 #ifndef FROG_H
 #define FROG_H
 
@@ -30,4 +26,4 @@ void frog::move() {
       myPos++;
    mySteps++;
 }
-#endif FROG_H
+#endif

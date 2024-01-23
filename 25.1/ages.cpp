@@ -34,13 +34,13 @@ ostream &operator<<(ostream &out, const student &);
 int main() {
    listType data;
 
-   loadFile("Mac HD:ap97:names.txt", data);
+   loadFile("NAMES.txt", data);
    printList(data);
    doAddStudent(data);
    quickSort(data.list, 0, data.number - 1);
    cout << endl;
    printList(data);
-   saveFile("Mac HD:ap97:names.txt", data);
+   saveFile("NAMES.txt", data);
    return 0;
 }
 

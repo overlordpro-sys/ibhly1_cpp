@@ -1,5 +1,7 @@
 #include "linkedlist.cpp"
+#include <algorithm>
 #include <cmath>
+#include <cstddef>
 #include <fstream>
 #include <iomanip>
 #include <iostream>
@@ -22,6 +24,7 @@ void printHashList(vector<linkedlist<product> *> productList);
 void printHashListStats(vector<linkedlist<product> *> productList);
 double getPercentNulls(vector<linkedlist<product> *> productList);
 int hashCode(int id);
+product *search(vector<linkedlist<product> *> productList, int id);
 
 int hashCodeOpt(int id, double scalar1, double scalar2) {
    ostringstream ss;
@@ -81,6 +84,35 @@ int main() {
    loadList(filename, productList);
    printHashList(productList);
    printHashListStats(productList);
+
+   // Search
+   char choice = 'y';
+   while (choice != 'n') {
+      cout << "Enter an id to search for: ";
+      int searchId;
+      cin >> searchId;
+      // check if valid input
+      if (cin.fail()) {
+         cout << "Invalid input\n";
+         cin.clear();
+         cin.ignore(1000, '\n');
+         continue;
+      }
+      product *temp = search(productList, searchId);
+      if (temp == nullptr) {
+         cout << "Not found\n";
+      } else {
+         cout << "Found - Id: " << temp->id << " Inv: " << temp->inv << "\n";
+      }
+      cout << "Search again? (y/n): ";
+      // Check for input other than y and n
+      cin >> choice;
+      if (choice != 'y' && choice != 'n') {
+         cout << "Invalid input\n";
+         cin.clear();
+         cin.ignore(1000, '\n');
+      }
+   }
    return 0;
 }
 
@@ -164,4 +196,19 @@ void printHashListStats(vector<linkedlist<product> *> productList) {
         << "\nAverage length of linked lists: " << getAverageLength(productList)
         << "\nLongest length of linked list: " << getLongestLength(productList)
         << endl;
+}
+
+product *search(vector<linkedlist<product> *> productList, int id) {
+   int hash = hashCode(id);
+   if (productList[hash] == nullptr) {
+      return nullptr;
+   }
+   listNode<product> *temp = productList[hash]->getFirst();
+   while (temp != nullptr) {
+      if (temp->item.id == id) {
+         return &temp->item;
+      }
+      temp = temp->next;
+   }
+   return nullptr;
 }
