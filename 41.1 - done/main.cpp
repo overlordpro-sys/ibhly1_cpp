@@ -154,7 +154,7 @@ void printPostorderHelper(treePtr root) {
 }
 
 void printInorderNonrecursive(binaryTree tree) {
-   apstack<treePtr> stack;
+   newstack<treePtr> stack;
    treePtr temp = tree.root;
    do {
       while (temp != nullptr) {

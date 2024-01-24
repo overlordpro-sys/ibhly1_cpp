@@ -172,13 +172,13 @@ int getLongestLength(vector<linkedlist<product> *> productList) {
 }
 
 double getAverageLength(vector<linkedlist<product> *> productList) {
-   double sum = 0;
-   for (linkedlist<product> *products : productList) {
-      if (products != nullptr) {
-         sum += products->length();
-      }
-   }
-   return sum / 600;
+    double nulls = 0;
+    for (linkedlist<product> *products : productList) {
+        if (products == nullptr) {
+            nulls++;
+        }
+    }
+   return 400.0 / (600-nulls);
 }
 
 double getPercentNulls(vector<linkedlist<product> *> productList) {

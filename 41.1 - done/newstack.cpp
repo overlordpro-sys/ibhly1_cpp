@@ -1,32 +1,31 @@
 #include "newstack.h"
 #include <iostream>
-#include <stdlib.h>
 using std::cerr;
 using std::endl;
 const int SDEFAULT_SIZE = 10; // default initial stack size
 
 template <class itemType>
-apstack<itemType>::apstack()
+newstack<itemType>::newstack()
     : myElements(linkedlist<itemType>())
 
 // postcondition: the stack is empty
 {}
 
 template <class itemType>
-apstack<itemType>::apstack(const apstack<itemType> &s)
+newstack<itemType>::newstack(const newstack<itemType> &s)
     : myElements(new linkedlist<itemType>(*s.myElements))
 
 // postcondition: stack is a copy of s
 {}
 
 template <class itemType>
-apstack<itemType>::~apstack()
+newstack<itemType>::~newstack()
 // postcondition: stack is destroyed
 {}
 
 template <class itemType>
-const apstack<itemType> &
-apstack<itemType>::operator=(const apstack<itemType> &rhs)
+const newstack<itemType> &
+newstack<itemType>::operator=(const newstack<itemType> &rhs)
 // postcondition: normal assignment via copying has been performed
 {
    if (this != &rhs) {
@@ -36,21 +35,21 @@ apstack<itemType>::operator=(const apstack<itemType> &rhs)
 }
 
 template <class itemType>
-bool apstack<itemType>::empty() const
+bool newstack<itemType>::empty() const
 // postcondition: returns true if stack is empty, false otherwise
 {
    return myElements.empty();
 }
 
 template <class itemType>
-int apstack<itemType>::length() const
+int newstack<itemType>::length() const
 // postcondition: returns # of elements currently in stack
 {
    return myElements.length;
 }
 
 template <class itemType>
-void apstack<itemType>::push(const itemType &item)
+void newstack<itemType>::push(const itemType &item)
 // precondition: stack is [e1, e2...en] with  n >= 0
 // postcondition: stack is [e1, e2, ... en, item]
 {
@@ -60,7 +59,7 @@ void apstack<itemType>::push(const itemType &item)
 #include <iostream>
 
 template <class itemType>
-void apstack<itemType>::pop()
+void newstack<itemType>::pop()
 // precondition: stack is [e1,e2,...en] with n >= 1
 // postcondition: stack is [e1,e2,...e(n-1)]
 {
@@ -72,7 +71,7 @@ void apstack<itemType>::pop()
 }
 
 template <class itemType>
-void apstack<itemType>::pop(itemType &item)
+void newstack<itemType>::pop(itemType &item)
 // precondition: stack is [e1,e2,...en] with n >= 1
 // postcondition: stack is [e1,e2,...e(n-1)] and item == en
 {
@@ -85,7 +84,7 @@ void apstack<itemType>::pop(itemType &item)
 }
 
 template <class itemType>
-const itemType &apstack<itemType>::top() const
+const itemType &newstack<itemType>::top() const
 // precondition: stack is [e1, e2, ... en] with n >= 1
 // postcondition: returns en
 {
@@ -97,7 +96,7 @@ const itemType &apstack<itemType>::top() const
 }
 
 template <class itemType>
-void apstack<itemType>::makeEmpty()
+void newstack<itemType>::makeEmpty()
 // postcondition:  stack is empty
 {
    myElements.clear();

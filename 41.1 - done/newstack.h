@@ -1,24 +1,19 @@
-#ifndef _APSTACK_H
-#define _APSTACK_H
-
-// uncomment line below if bool not built-in type
-// *******************************************************************
-// APCS stack class
-// *******************************************************************
+#ifndef _NEWSTACK_H
+#define _NEWSTACK_H
 
 #include "linkedlist.h" // used for stack implementation
 
-template <class itemType> class apstack {
+template <class itemType> class newstack {
  public:
    // constructors/destructor
 
-   apstack();                 // construct empty stack
-   apstack(const apstack &s); // copy constructor
-   ~apstack();                // destructor
+   newstack();                 // construct empty stack
+   newstack(const newstack &s); // copy constructor
+   ~newstack();                // destructor
 
    // assignment
 
-   const apstack &operator=(const apstack &rhs);
+   const newstack &operator=(const newstack &rhs);
 
    // accessors
 
@@ -47,18 +42,18 @@ template <class itemType> class apstack {
 //
 // constructors/destructor
 //
-//  apstack( )
+//  newstack( )
 //    postcondition: the stack is empty
 //
-//  apstack( const apstack & s )
+//  newstack( const newstack & s )
 //    postcondition: stack is a copy of s
 //
-//  ~apstack( )
+//  newstackk( )
 //    postcondition: stack is destroyed
 //
 // assignment
 //
-//  const apstack & operator = ( const apstack & rhs )
+//  const newstack & operator = ( const newstack & rhs )
 //    postcondition: normal assignment via copying has been performed
 //
 // accessors
@@ -93,8 +88,8 @@ template <class itemType> class apstack {
 //
 //  Examples of variable definition
 //
-//    apstack<int> istack;                    // creates empty stack of integers
-//    apstack<double> dstack;                 // creates empty stack of doubles
+//    newstack<int> istack;                    // creates empty stack of integers
+//    newstack<double> dstack;                 // creates empty stack of doubles
 //
 
 #endif
